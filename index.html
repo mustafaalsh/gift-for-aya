@@ -45,7 +45,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .hidden { display: none; }
-        img { width: 150px; height: auto; margin-bottom: 20px; border-radius: 10px; }
+        img { width: 160px; height: auto; margin-bottom: 20px; border-radius: 15px; }
         .btn { 
             background: var(--pink-primary); 
             color: white; 
@@ -58,14 +58,14 @@
             transition: 0.3s;
             box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
         }
-        #noBtn { position: relative; transition: all 0.2s ease; }
-        .heart-btn { font-size: 80px; cursor: pointer; animation: pulse 1s infinite; }
+        #noBtn { position: relative; transition: all 0.15s ease; z-index: 100; }
+        .heart-btn { font-size: 80px; cursor: pointer; animation: pulse 1s infinite; margin: 10px; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
         
         .heart-particle {
             position: fixed;
             top: -10%;
-            font-size: 20px;
+            font-size: 24px;
             z-index: 1;
             animation: fall linear forwards;
         }
@@ -87,25 +87,25 @@
 <body>
     <div class="container">
         <div id="page1" class="page">
-            <img src="https://media.tenor.com/On7Vf9vM6X8AAAAi/hello-kitty.gif">
+            <img src="https://c.tenor.com/On7Vf9vM6X8AAAAC/hello-kitty.gif" alt="Hello Kitty Wave">
             <h1>هل أنتِ آية؟ ❤️</h1>
             <button class="btn" onclick="nextPage(2)">نعم، أنا آية</button>
         </div>
 
         <div id="page2" class="page hidden">
-            <img src="https://media.tenor.com/XpAInMIP_p0AAAAi/hello-kitty-my-melody.gif">
+            <img src="https://c.tenor.com/XpAInMIP_p0AAAAC/hello-kitty-my-melody.gif" alt="Hello Kitty Friends">
             <p>هلو آية.. عندي سؤال الج..</p>
             <button class="btn" onclick="nextPage(3)">شنو هو؟ 🤭</button>
         </div>
 
         <div id="page3" class="page hidden">
-            <img src="https://media.tenor.com/9v1hPz8_n6sAAAAi/hello-kitty-shy.gif">
+            <img src="https://c.tenor.com/9v1hPz8_n6sAAAAC/hello-kitty-shy.gif" alt="Hello Kitty Shy">
             <p>بس مستحي أسألك إياه 🙈</p>
             <button class="btn" onclick="nextPage(4)">اسألني! 😠</button>
         </div>
 
         <div id="page4" class="page hidden">
-            <img src="https://media.tenor.com/T09_0P-O97oAAAAi/hello-kitty.gif">
+            <img src="https://c.tenor.com/T09_0P-O97oAAAAC/hello-kitty.gif" alt="Hello Kitty Thinking">
             <h2>تحبين مصطفى لو لا؟! 🤨</h2>
             <div style="display: flex; gap: 15px; justify-content: center; width: 100%; min-height: 80px; align-items: center;">
                 <button class="btn" onclick="nextPage(5)">أي أحبه ❤️</button>
@@ -114,7 +114,7 @@
         </div>
 
         <div id="page5" class="page hidden">
-            <img src="https://media.tenor.com/866p_6Yv890AAAAi/hello-kitty-love.gif">
+            <img src="https://c.tenor.com/866p_6Yv890AAAAC/hello-kitty-love.gif" alt="Hello Kitty Love">
             <p>دوسي على القلب 👇</p>
             <div class="heart-btn" onclick="startHearts(); nextPage(6)">❤️</div>
         </div>
@@ -123,10 +123,10 @@
             <div class="final-text">
                 رقت بوصف جمالك الأقوال.. ورأتك فافتتنت بك العذّال<br>
                 ومن الإله بك الجمال تجملاً.. حتى كأنك للجمال جمال<br><br>
-                أحبك واهم شي مو بكيفج تختارين لا لان كلشي بكيفي اني بس يا آية ❤️
+                أحبك واهم شي مو بكيفج تختارين "لا" لأن كلشي بكيفي اني بس يا آية ❤️
             </div>
             <p style="font-weight: bold; margin-top: 15px;">من مصطفى إلى آية 🧸</p>
-            <img src="https://media.tenor.com/S-Kiz-7vXmQAAAAi/hello-kitty-sanrio.gif" style="width: 100px;">
+            <img src="https://c.tenor.com/S-Kiz-7vXmQAAAAC/hello-kitty-sanrio.gif" style="width: 100px;" alt="Hello Kitty Final">
         </div>
     </div>
 
