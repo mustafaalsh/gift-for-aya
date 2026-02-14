@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>إلى آية ❤️</title>
     <style>
         :root {
@@ -21,6 +21,7 @@
             justify-content: center; 
             height: 100vh; 
             overflow: hidden; 
+            touch-action: manipulation;
         }
         .container { 
             background: rgba(255, 255, 255, 0.85); 
@@ -57,15 +58,14 @@
             transition: 0.3s;
             box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
         }
+        #noBtn { position: relative; transition: all 0.2s ease; }
         .heart-btn { font-size: 80px; cursor: pointer; animation: pulse 1s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
         
-        /* تأثير مطر القلوب */
         .heart-particle {
             position: fixed;
             top: -10%;
             font-size: 20px;
-            user-select: none;
             z-index: 1;
             animation: fall linear forwards;
         }
@@ -80,6 +80,7 @@
             font-weight: bold; 
             line-height: 1.8; 
             border: 2px dashed var(--pink-primary);
+            font-size: 1.05em;
         }
     </style>
 </head>
@@ -106,9 +107,9 @@
         <div id="page4" class="page hidden">
             <img src="https://media.giphy.com/media/MDJ9IbxxvDuQM/giphy.gif">
             <h2>تحبين مصطفى لو لا؟! 🤨</h2>
-            <div style="display: flex; gap: 15px; justify-content: center;">
+            <div style="display: flex; gap: 15px; justify-content: center; width: 100%; min-height: 80px; align-items: center;">
                 <button class="btn" onclick="nextPage(5)">أي أحبه ❤️</button>
-                <button class="btn" id="noBtn" onmouseover="moveBtn()" onclick="moveBtn()">لا ❌</button>
+                <button class="btn" id="noBtn" ontouchstart="moveBtn()" onmouseover="moveBtn()" onclick="moveBtn()">لا ❌</button>
             </div>
         </div>
 
@@ -120,9 +121,11 @@
 
         <div id="page6" class="page hidden">
             <div class="final-text">
-                احبك واهم شي مو بكيفج دوسين لا كلشي بكيفي اني بس يا آية ❤️
+                رقت بوصف جمالك الأقوال.. ورأتك فافتننت بك العذّال<br>
+                ومن الإله بك الجمال تجملاً.. حتى كأنك للجمال جمال<br><br>
+                أحبك واهم شي مو بكيفج تختارين لا كلشي بكيفي اني بس يا آية ❤️
             </div>
-            <p style="font-weight: bold; margin-top: 20px;">من مصطفى إلى آية 🧸</p>
+            <p style="font-weight: bold; margin-top: 15px;">من مصطفى إلى آية 🧸</p>
             <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ6ODNidm9reG50Z3Fid3BqZ3BqZ3BqZ3BqZ3BqZ3BqZ3BqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/fN9AdT725BwXU5e89V/giphy.gif" style="width: 100px;">
         </div>
     </div>
@@ -135,9 +138,13 @@
 
         function moveBtn() {
             const b = document.getElementById('noBtn');
+            const maxX = window.innerWidth - b.offsetWidth - 20;
+            const maxY = window.innerHeight - b.offsetHeight - 20;
+            const randomX = Math.max(10, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(10, Math.floor(Math.random() * maxY));
             b.style.position = 'fixed';
-            b.style.left = Math.random() * (window.innerWidth - 100) + 'px';
-            b.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+            b.style.left = randomX + 'px';
+            b.style.top = randomY + 'px';
         }
 
         function startHearts() {
